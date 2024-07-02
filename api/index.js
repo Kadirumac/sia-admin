@@ -1,4 +1,5 @@
 import express from "express";
+import serverless from "serverless-http";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import userRoutes from "./routes/user.route.js";
@@ -50,3 +51,5 @@ app.use((err, req, res, next) => {
     message,
   });
 });
+
+export const handler = serverless(app);
